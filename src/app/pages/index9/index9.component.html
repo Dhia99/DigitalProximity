@@ -1,0 +1,76 @@
+<!-- STRAT NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-custom sticky sticky-dark" id="navbar"
+    (window:scroll)="windowScroll()">
+    <div class="container">
+        <a class="navbar-brand" href="#">DigiPro</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleMenu()">
+            <span class="ti-menu"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mx-auto" id="navbar-navlist">
+                <li class="nav-item" [ngClass]="{'active':currentSection === 'home'}">
+                    <a [ngxScrollTo]="'#home'" class="nav-link" href="javascript: void(0);" (click)="toggleMenu()">Accueil</a>
+                </li>
+                <li class="nav-item" [ngClass]="{'active':currentSection === 'features'}">
+                    <a [ngxScrollTo]="'#features'" class="nav-link" href="javascript: void(0);"(click)="toggleMenu()">Pourqui Nous Choisir ?</a>
+                </li>
+                <li class="nav-item" [ngClass]="{'active':currentSection === 'faq'}">
+                    <a [ngxScrollTo]="'#faq'" class="nav-link" href="javascript: void(0);"(click)="toggleMenu()">Qui Sommes Nous ?</a>
+                </li>
+                <li class="nav-item" [ngClass]="{'active':currentSection === 'services'}">
+                    <a [ngxScrollTo]="'#services'" class="nav-link" href="javascript: void(0);"(click)="toggleMenu()">Services</a>
+                </li>
+                <li class="nav-item" [ngClass]="{'active':currentSection === 'testi'}">
+                    <a [ngxScrollTo]="'#testi'" class="nav-link" href="javascript: void(0);"(click)="toggleMenu()">Gallerie</a>
+                </li>
+                <li class="nav-item" [ngClass]="{'active':currentSection === 'team'}">
+                    <a [ngxScrollTo]="'#team'" class="nav-link" href="javascript: void(0);"(click)="toggleMenu()">Equipe</a>
+                </li>
+                <li class="nav-item" [ngClass]="{'active':currentSection === 'contact'}">
+                    <a [ngxScrollTo]="'#contact'" class="nav-link" href="javascript: void(0);"(click)="toggleMenu()">Contact</a>
+                </li>
+            </ul>
+            <div>
+                <ul class="text-right list-unstyled list-inline mb-0 nav-social">
+                    <li class="list-inline-item text-white nav-number"><i class="ti-mobile"></i> <span>00000000</span></li>
+                    <li class="list-inline-item"><a href="" class="facebook"><i class="ti-facebook"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+<!-- END NAVBAR -->
+
+<div appScrollspy [spiedTags]="['SECTION']" (sectionChange)="onSectionChange($event)">
+    <!-- START HOME -->
+    <section class="half-home" id="home">
+        <img name="silde" class="slide-img" id="isSlideImage" src="assets/images/slide-1.jpg">
+        <div class="bg-overlay"></div>
+        <div class="home-center">
+            <div class="home-desc-center">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-10">
+                            <div class="text-center">
+                                <h1 class="text-white home-title mb-0">Bienvenue Chez Digital Proximity</h1>
+                                <p class="text-white home-subtitle-center home-subtitle mt-4 mb-0 mx-auto">It is a long
+                                    established fact that a reader will be of a page when established fact looking at
+                                    its layout.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END HOME -->
+    <app-features></app-features>
+    <app-faq></app-faq>
+    <app-services></app-services>
+    <app-client></app-client>
+    <app-team></app-team>
+    <app-contact></app-contact> 
+    <app-footer></app-footer>
+</div>
